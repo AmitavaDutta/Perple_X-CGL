@@ -21,12 +21,13 @@ def data(file_path):
 
 def plot(T, P, Vs, title, filename, cmap):
     plt.figure(figsize=(7, 6))
-    scatter = plt.scatter(T, P, c=Vs, cmap=cmap)
+    scatter = plt.scatter(T - 273.15, P * 1e-4, c=Vs, cmap=cmap)
     plt.colorbar(scatter, label='Vs (Km/s)')
     plt.title(title)
-    plt.xlabel('T (K)')
-    plt.ylabel('P (bar)')
+    plt.xlabel('T (oC)')
+    plt.ylabel('P (GPa)')
     plt.tight_layout()
+    plt.gca().invert_yaxis()
     plt.savefig(filename, format='png')  # Change to .ps to save as .ps file
 
 # Define color maps for each plot

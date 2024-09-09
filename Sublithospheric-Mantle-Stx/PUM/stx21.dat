@@ -62,7 +62,7 @@ Wad
 Ring      
 end solution phase list
 
-   15000.0        1723.00        0.00000        0.00000        0.00000     max p, t, xco2, mu_1, mu_2
+   150000.        1723.00        0.00000        0.00000        0.00000     max p, t, xco2, mu_1, mu_2
    15.0000        273.000        0.00000        0.00000        0.00000     min p, t, xco2, mu_1, mu_2
    0.00000        0.00000        0.00000        0.00000        0.00000     unused place holder post 06
 

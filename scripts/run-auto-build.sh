@@ -27,9 +27,9 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "273"                              # Minimum T(K)
     echo "1723"                             # Maximum T(K)
     echo "15"                               # Minimum P(bar)
-    echo "15000"                            # Maximum P(bar)
+    echo "150000"                           # Maximum P(bar)
     echo "y"                                # Specify component amounts by mass (Y/N)
-    echo "0.36 37.80 4.5 45.0 3.6 8.10"   # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO
+    echo "0.36 37.8 4.5 45 3.6 8.10"   # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO
     echo "n"                                # Output a print file (Y/N)
     echo "n"                                # Exclude pure/endmember phases (Y/N)
     echo "y"                                # Include solution models (Y/N)
