@@ -1,0 +1,92 @@
+
+Seismic wavespeed computational options:
+
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Anderson-Gruneisen      F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+In the tables below: implicit moduli are calculated rigorously from the EoS,
+explicit moduli are computed from empirical functions provided in the
+thermodynamic data file.
+
+
+Endmembers and stoichiometric compounds:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+        fo            implicit    explicit                 
+        fa            implicit    explicit                 
+        lrn           implicit    explicit                 
+        mont          implicit    explicit                 
+        py            implicit    explicit                 
+        alm           implicit    explicit                 
+        gr            implicit    explicit                 
+        and           implicit    explicit                 
+        ky            implicit    explicit                 
+        sill          implicit    explicit                 
+        merw          implicit    explicit                 
+        geh           implicit    explicit                 
+        ak            implicit    explicit                 
+        rnk           implicit    explicit                 
+        crd           implicit    explicit                 
+        fcrd          implicit    explicit                 
+        en            implicit    explicit                 
+        fs            implicit    explicit                 
+        mgts          implicit    explicit                 
+        di            implicit    explicit                 
+        hed           implicit    explicit                 
+        cats          implicit    explicit                 
+        wo            implicit    explicit                 
+        pswo          implicit    explicit                 
+        spr4          implicit    explicit                 
+        spr7          implicit    explicit                 
+        fspr          implicit    explicit                 
+        an            implicit    explicit                 
+        q             implicit    explicit                 
+        trd           implicit    explicit                 
+        crst          implicit    explicit                 
+        coe           implicit    explicit                 
+        stv           implicit    explicit                 
+        lime          implicit    explicit                 
+        per           implicit    explicit                 
+        cor           implicit    explicit                 
+        sp            implicit    explicit                 
+        herc          implicit    explicit                 
+        foL           implicit    explicit                 
+        faL           implicit    explicit                 
+        silL          implicit    explicit                 
+        anL           implicit    explicit                 
+        enL           implicit    explicit                 
+        qL            implicit    explicit                 
+        diL           implicit    explicit                 
+        qGL           implicit    fluid                    
+        coGL          implicit    fluid                    
+        faGL          implicit    fluid                    
+        foGL          implicit    fluid                    
+        woGL          implicit    fluid                    
+        fper          implicit    explicit     made entity*
+        sil8L         implicit    explicit     made entity*
+        fo8L          implicit    explicit     made entity*
+        fa8L          implicit    explicit     made entity*
+        q8L           implicit    explicit     made entity*
+
+*explicit moduli of made endmembers are computed as a linear combination of 
+the real endmembers specified in the corresponding make definition.
+
+
+Solutions:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+      Opx(HP)         implicit    explicit 
+      O(HP)           implicit    explicit 
+      Sp(HP)          implicit    explicit 
+      Cpx(HP)         implicit    explicit 
+      Gt(stx8)        implicit    explicit 

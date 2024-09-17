@@ -1,0 +1,189 @@
+
+Seismic wavespeed computational options:
+
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Anderson-Gruneisen      F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+In the tables below: implicit moduli are calculated rigorously from the EoS,
+explicit moduli are computed from empirical functions provided in the
+thermodynamic data file.
+
+
+Endmembers and stoichiometric compounds:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+        fo            implicit    explicit                 
+        fa            implicit    explicit                 
+        lrn           implicit    explicit                 
+        mont          implicit    explicit                 
+        chum          implicit    explicit                 
+        py            implicit    explicit                 
+        alm           implicit    explicit                 
+        gr            implicit    explicit                 
+        vsv           implicit    explicit                 
+        and           implicit    explicit                 
+        ky            implicit    explicit                 
+        sill          implicit    explicit                 
+        tpz           implicit    explicit                 
+        mst           implicit    explicit                 
+        fst           implicit    explicit                 
+        mctd          implicit    explicit                 
+        fctd          implicit    explicit                 
+        merw          implicit    explicit                 
+        spu           implicit    explicit                 
+        zo            implicit    explicit                 
+        cz            implicit    explicit                 
+        law           implicit    explicit                 
+        pump          implicit    explicit                 
+        geh           implicit    explicit                 
+        ak            implicit    explicit                 
+        rnk           implicit    explicit                 
+        ty            implicit    explicit                 
+        crd           implicit    explicit                 
+        hcrd          implicit    explicit                 
+        fcrd          implicit    explicit                 
+        phA           implicit    explicit                 
+        en            implicit    explicit                 
+        fs            implicit    explicit                 
+        mgts          implicit    explicit                 
+        di            implicit    explicit                 
+        hed           implicit    explicit                 
+        jd            implicit    explicit                 
+        cats          implicit    explicit                 
+        wo            implicit    explicit                 
+        pswo          implicit    explicit                 
+        tr            implicit    explicit                 
+        ftr           implicit    explicit                 
+        ts            implicit    explicit                 
+        parg          implicit    explicit                 
+        gl            implicit    explicit                 
+        fgl           implicit    explicit                 
+        anth          implicit    explicit                 
+        fanth         implicit    explicit                 
+        cumm          implicit    explicit                 
+        grun          implicit    explicit                 
+        ged           implicit    explicit                 
+        spr4          implicit    explicit                 
+        spr7          implicit    explicit                 
+        fspr          implicit    explicit                 
+        mcar          implicit    explicit                 
+        fcar          implicit    explicit                 
+        pa            implicit    explicit                 
+        ma            implicit    explicit                 
+        naph          implicit    explicit                 
+        clin          implicit    explicit                 
+        ames          implicit    explicit                 
+        afchl         implicit    explicit                 
+        daph          implicit    explicit                 
+        sud           implicit    explicit                 
+        fsud          implicit    explicit                 
+        prl           implicit    explicit                 
+        ta            implicit    explicit                 
+        fta           implicit    explicit                 
+        tats          implicit    explicit                 
+        kao           implicit    explicit                 
+        pre           implicit    explicit                 
+        chr           implicit    explicit                 
+        atg           implicit    explicit                 
+        ab            implicit    explicit                 
+        abh           implicit    explicit                 
+        an            implicit    explicit                 
+        q             implicit    explicit                 
+        trd           implicit    explicit                 
+        crst          implicit    explicit                 
+        coe           implicit    explicit                 
+        stv           implicit    explicit                 
+        ne            implicit    explicit                 
+        me            implicit    explicit                 
+        wrk           implicit    explicit                 
+        lmt           implicit    explicit                 
+        heu           implicit    explicit                 
+        stlb          implicit    explicit                 
+        anl           implicit    explicit                 
+        lime          implicit    explicit                 
+        per           implicit    explicit                 
+        cor           implicit    explicit                 
+        sp            implicit    explicit                 
+        herc          implicit    explicit                 
+        br            implicit    explicit                 
+        dsp           implicit    explicit                 
+        cc            implicit    explicit                 
+        CACO3L        implicit    explicit                 
+        MGCO3L        implicit    explicit                 
+        FECO3L        implicit    explicit                 
+        arag          implicit    explicit                 
+        mag           implicit    explicit                 
+        sid           implicit    explicit                 
+        dol           implicit    explicit                 
+        ank           implicit    explicit                 
+        H2O           implicit    fluid                    
+        CO2           implicit    fluid                    
+        foL           implicit    explicit                 
+        faL           implicit    explicit                 
+        silL          implicit    explicit                 
+        anL           implicit    fluid                    
+        h2oL          implicit    fluid                    
+        enL           implicit    explicit                 
+        qL            implicit    explicit                 
+        diL           implicit    explicit                 
+        abL           implicit    fluid                    
+        na2o          implicit    explicit                 
+        qGL           implicit    fluid                    
+        coGL          implicit    fluid                    
+        faGL          implicit    fluid                    
+        foGL          implicit    fluid                    
+        woGL          implicit    fluid                    
+        nasGL         implicit    fluid                    
+        h2oGL         implicit    fluid                    
+        fpum          implicit    explicit                 
+        acti          implicit    explicit                 
+        sud_dqf       implicit    explicit                 
+        fbr           implicit    explicit     made entity*
+        fchum         implicit    explicit     made entity*
+        fphA          implicit    explicit     made entity*
+        fper          implicit    explicit     made entity*
+        fatg          implicit    explicit     made entity*
+        atgts         implicit    explicit     made entity*
+        odo           implicit    explicit     made entity*
+        oank          implicit    explicit     made entity*
+        sil8L         implicit    fluid        made entity*
+        fo8L          implicit    fluid        made entity*
+        fa8L          implicit    fluid        made entity*
+        q8L           implicit    fluid        made entity*
+        ts_dqf        implicit    explicit     made entity*
+        parg_dqf      implicit    explicit     made entity*
+        gl_dqf        implicit    explicit     made entity*
+        mpa           implicit    explicit     made entity*
+        ged_dqf       implicit    explicit     made entity*
+        ogl_dqf       implicit    explicit     made entity*
+        fanth_dq      implicit    explicit     made entity*
+        cumm_dqf      implicit    explicit     made entity*
+        grun_dqf      implicit    explicit     made entity*
+        coma          implicit    explicit     made entity*
+        ma_dqf        implicit    explicit     made entity*
+
+*explicit moduli of made endmembers are computed as a linear combination of 
+the real endmembers specified in the corresponding make definition.
+
+
+Solutions:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+      Opx(HP)         implicit    explicit 
+      F               implicit    fluid    
+      Pl(h)           implicit    explicit 
+      O(HP)           implicit    explicit 
+      Sp(HP)          implicit    explicit 
+      Gt(HP)          implicit    explicit 
+      Cpx(HP)         implicit    explicit 
+      melt(HP)        implicit    liquid   
