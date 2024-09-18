@@ -12,7 +12,7 @@ Directory 2-Crust contains all the executed files for Crust using Holland and Po
 
 ##### **Two examples with melt in the system**
 
-### **Considering Melt in as Saturated Fluid in Equilibrium with the Bulk Composition**
+### **Considering Melt in as Saturated Fluid in Equilibrium with the Bulk Composition**https://github.com/AmitavaDutta/Perple_X-CGL/blob/main/2-Crust/Melt/Vs_OUC.png
 ![Considering Melt in as saturated fluid in equilibrium with the Bulk Composition](https://raw.githubusercontent.com/AmitavaDutta/Perple_X-CGL/main/2-Crust/Melt/Vs_OUC.png?token=GHSAT0AAAAAACWJKZFYIM3KF5MLQTNGXFGOZXJ2S3A)
 
 ### **Considering Melt in Bulk Composition**
