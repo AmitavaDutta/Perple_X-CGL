@@ -89,16 +89,16 @@ def plot(T, P, Vs, rho, title, filename, cmap):
     plt.savefig(filename, format='png')  # Save plot as PNG
 
 # Define color map for the plot
-cmap_ouc = 'inferno'
+cmap_cuc = 'inferno'
 
 # Read data from hp_1.tab
-data_ouc = data('HP-OUC.tab')
+data_cuc = data('HP-CUC.tab')
 
 # Extract columns
-T_ouc, P_ouc, rho_ouc, Vs_ouc = data_ouc[:, 0], data_ouc[:, 1], data_ouc[:, 2], data_ouc[:, 3]
+T_cuc, P_cuc, rho_cuc, Vs_cuc = data_cuc[:, 0], data_cuc[:, 1], data_cuc[:, 2], data_cuc[:, 3]
 
-# Plot Vs for OUC with 'inferno' colormap
-plot(T_ouc, P_ouc, Vs_ouc, rho_ouc, 'Vs_OUC', 'Vs_OUC.png', cmap_ouc)
+# Plot Vs for CUC with 'inferno' colormap
+plot(T_cuc, P_cuc, Vs_cuc, rho_cuc, 'Vs_CUC', 'Vs_CUC.png', cmap_cuc)
 
 # Show the plot
 plt.show()

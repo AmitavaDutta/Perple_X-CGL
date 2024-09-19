@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.tri import Triangulation
 
 def data(file_path):
     # Read data starting from line 23, ignoring comments
@@ -13,58 +14,91 @@ def data(file_path):
                     try:
                         T = float(parts[0])
                         P = float(parts[1])
-                        Vs = float(parts[6])
-                        data.append((T, P, Vs))
+                        rho = float(parts[2])  # Assuming rho is in the 3rd column
+                        Vs = abs(float(parts[6]))  # Ensure Vs is non-negative
+                        if Vs > 0:  # Filter out zero values
+                            data.append((T, P, rho, Vs))
                     except ValueError:
                         continue  # Skip lines with invalid data
     return np.array(data)
 
-def plot(T, P, Vs, title, filename, cmap):
-    fig, ax = plt.subplots(figsize=(7, 6))
-    scatter = ax.scatter(T - 273.15, P * 1e-4, c=Vs, cmap=cmap)
-    cbar = plt.colorbar(scatter, ax=ax, label='Vs (Km/s)')
-    ax.set_title(title)
-    ax.set_xlabel('T (°C)')
-    ax.set_ylabel('P (GPa)')
-    ax.invert_yaxis()
+def plot(T, P, Vs, rho, title, filename, cmap):
+    # Flatten arrays
+    T_flat = T.flatten()
+    P_flat = P.flatten()
+    Vs_flat = Vs.flatten()
+    rho_flat = rho.flatten()
+
+    # Remove non-finite values
+    mask = np.isfinite(T_flat) & np.isfinite(P_flat) & np.isfinite(Vs_flat) & np.isfinite(rho_flat)
+    T_flat = T_flat[mask]
+    P_flat = P_flat[mask]
+    Vs_flat = Vs_flat[mask]
+    rho_flat = rho_flat[mask]
+
+    # Debugging output to check data
+    print(f"Filtered data points: {T_flat.size}")
+    if T_flat.size < 3:
+        raise ValueError("Not enough valid data points for triangulation.")
+
+    # Calculate depth inside the function
+    def calculate_depth(P, rho, g=9.81):
+        # Convert P from bar to Pa: 1 bar = 10^5 Pa
+        P = P * 1e5  # Convert P to Pascals
+        depth = np.zeros_like(P)
+        for i in range(1, len(P)):
+            # Calculate depth in meters, then convert to kilometers
+            depth[i] = depth[i-1] + (P[i] - P[i-1]) / (rho[i] * g)
+        return depth / 1000  # Convert depth to kilometers
+
+    # Calculate depth
+    depth = calculate_depth(P_flat, rho_flat)
+
+    # Create the triangulation for T and P
+    triang = Triangulation(T_flat - 273.15, P_flat * 1e-4)  # Convert T to °C and P to GPa
+
+    # Plot using the triangulation
+    fig, ax1 = plt.subplots(figsize=(10, 8))
+
+    # Plot Vs on primary y-axis
+    contour = ax1.tricontourf(triang, Vs_flat, cmap=cmap)
+    cbar = plt.colorbar(contour, ax=ax1, label='Vs (Km/s)', pad=0.1)
+    ax1.set_title(title)
+    ax1.set_xlabel('T (°C)')
+    ax1.set_ylabel('P (GPa)')
+    ax1.set_ylim(0, 6)  # Setting pressure range (0-6 GPa)
+    ax1.invert_yaxis()
+
+    # Create secondary y-axis for depth, based on pressure
+    ax2 = ax1.twinx()
+
+    # Define a linear transformation from pressure to depth
+    def pressure_to_depth(p, rho):
+        g = 9.81  # m/s² (gravitational acceleration)
+        return (p * 1e9) / (rho * g) / 1000  # Convert Pa to km
+
+    # Apply the transformation for each pressure using the corresponding rho
+    depth_limits = [pressure_to_depth(p, r) for p, r in zip(ax1.get_ylim(), [rho_flat[0], rho_flat[-1]])]
+
+    # Set the limits for the secondary depth axis
+    ax2.set_ylim(depth_limits)
+    ax2.set_ylabel('Depth (km)', color='k')
+    ax2.tick_params(axis='y', labelcolor='k')
+
     plt.tight_layout()
-    plt.savefig(filename, format='png')  # Change to .ps to save as .ps file
+    plt.savefig(filename, format='png')  # Save plot as PNG
 
-# Define color maps for each plot
-cmap_pum = 'inferno'
-cmap_dmm = 'magma'
-cmap_diff = 'viridis'
+# Define color map for the plot
+cmap_cuc = 'inferno'
 
-# Read data from files
-data_dmm = data('stx21-DMM.tab')
-data_pum = data('stx21-PUM.tab')
+# Read data from hp_1.tab
+data_cuc = data('hp_1.tab')
 
 # Extract columns
-T_dmm, P_dmm, Vs_dmm = data_dmm[:, 0], data_dmm[:, 1], data_dmm[:, 2]
-T_pum, P_pum, Vs_pum = data_pum[:, 0], data_pum[:, 1], data_pum[:, 2]
+T_cuc, P_cuc, rho_cuc, Vs_cuc = data_cuc[:, 0], data_cuc[:, 1], data_cuc[:, 2], data_cuc[:, 3]
 
-# Plot Vs for PUM with 'plasma' colormap
-plot(T_pum, P_pum, Vs_pum, 'Vs_PUM', 'Vs_PUM.png', cmap_pum)
+# Plot Vs for CUC with 'inferno' colormap
+plot(T_cuc, P_cuc, Vs_cuc, rho_cuc, 'Vs_CUC', 'Vs_CUC.png', cmap_cuc)
 
-# Plot Vs for DMM with 'inferno' colormap
-plot(T_dmm, P_dmm, Vs_dmm, 'Vs_DMM', 'Vs_DMM.png', cmap_dmm)
-
-# Calculate difference and plot with 'magma' colormap
-# Create a dictionary for quick lookup
-dmm_dict = {(t, p): Vs for t, p, Vs in zip(T_dmm, P_dmm, Vs_dmm)}
-common_keys = {(t, p) for t, p in zip(T_pum, P_pum)}
-Vs_diff = []
-
-for t, p, Vs_pum in zip(T_pum, P_pum, Vs_pum):
-    if (t, p) in dmm_dict:
-        Vs_dmm = dmm_dict[(t, p)]
-        Vs_diff.append((t, p, abs(Vs_dmm - Vs_pum)))
-
-# Convert difference data to numpy array
-T_diff, P_diff, Vs_diff = np.array(Vs_diff).T
-
-# Plot difference with 'magma' colormap
-plot(T_diff, P_diff, Vs_diff, 'Vs_relative', 'Vs_relative.png', cmap_diff)
-
-# Show all plots together
+# Show the plot
 plt.show()

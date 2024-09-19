@@ -15,7 +15,7 @@ def data(file_path):
                         T = float(parts[0])
                         P = float(parts[1])
                         rho = float(parts[2])  # Assuming rho is in the 3rd column
-                        Vp = abs(float(parts[6]))  # Ensure Vp is non-negative
+                        Vp = abs(float(parts[5]))  # Ensure Vp is non-negative
                         if Vp > 0:  # Filter out zero values
                             data.append((T, P, rho, Vp))
                     except ValueError:
@@ -66,7 +66,7 @@ def plot(T, P, Vp, rho, title, filename, cmap):
     ax1.set_title(title)
     ax1.set_xlabel('T (°C)')
     ax1.set_ylabel('P (GPa)')
-    ax1.set_ylim(0, 6)  # Setting pressure range (0-6 GPa)
+    ax1.set_ylim(0, 5)  # Setting pressure range (0-6 GPa)
     ax1.invert_yaxis()
 
     # Create secondary y-axis for depth, based on pressure
@@ -92,7 +92,7 @@ def plot(T, P, Vp, rho, title, filename, cmap):
 cmap_cuc = 'inferno'
 
 # Read data from hp_1.tab
-data_cuc = data('hp_1.tab')
+data_cuc = data('HP-CUC.tab')
 
 # Extract columns
 T_cuc, P_cuc, rho_cuc, Vp_cuc = data_cuc[:, 0], data_cuc[:, 1], data_cuc[:, 2], data_cuc[:, 3]

@@ -66,7 +66,7 @@ def plot(T, P, Vs, rho, title, filename, cmap):
     ax1.set_title(title)
     ax1.set_xlabel('T (°C)')
     ax1.set_ylabel('P (GPa)')
-    ax1.set_ylim(0, 6)  # Setting pressure range (0-6 GPa)
+    ax1.set_ylim(0, 5)  # Setting pressure range (0-6 GPa)
     ax1.invert_yaxis()
 
     # Create secondary y-axis for depth, based on pressure
@@ -92,7 +92,7 @@ def plot(T, P, Vs, rho, title, filename, cmap):
 cmap_cuc = 'inferno'
 
 # Read data from hp_1.tab
-data_cuc = data('hp_1.tab')
+data_cuc = data('HP-CUC.tab')
 
 # Extract columns
 T_cuc, P_cuc, rho_cuc, Vs_cuc = data_cuc[:, 0], data_cuc[:, 1], data_cuc[:, 2], data_cuc[:, 3]
