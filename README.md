@@ -10,7 +10,7 @@ Directory 1-Sublithospheric-Mantle-Stx contains all the executed files using Sti
 
 Directory 2-Crust contains all the executed files for Crust using Holland and Powell 2008
 
-### **For Continental Crust here is a plot of LitMod data onto a Perple_X data**
+### **For Continental Crust here is a plot of LitMod data onto a Perple_X data where melt is present as Saturated Fluid in Equilibrium with the Bulk Composition**
 ![Perple_X v LitMod](./2-Crust/Melt/CUC-PerpleX_LitMod.png)
 
 #### **Two examples with melt in the system**
