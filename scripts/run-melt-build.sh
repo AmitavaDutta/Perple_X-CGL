@@ -9,33 +9,33 @@ input_file="build_input.txt"  # For all the input and their functions check http
 
 {
     echo "$project_name"                    # Project name
-    echo "hp02ver.dat"                      # Thermodynamic data file
+    echo "hp633ver.dat"                      # Thermodynamic data file
     echo "perplex_option.dat"               # Computational option file
     echo "n"                                # Transform components (Y/N)
     echo "2"                                # Computational mode (2d grid)
-    echo "y"                                # Calculations with saturated components (Y/N)
-    echo "H2O"				    # Independent Satuturated fluids
-    echo "CO2"				    # Independent Satuturated fluids
+    echo "y"                                # Calculations with saturated fluids (Y/N)
+    echo "H2O"                              # Independent saturated fluid component
+    echo "CO2"                              # Independent saturated fluid component
     echo "n"  				    # Calculations with saturated components (Y/N)?
     echo "n"                                # Use chemical potentials, activities, fugacities (Y/N)
-    echo "NA2O"                             # Thermodynamic component 1
-    echo "MGO"                              # Thermodynamic component 2
-    echo "AL2O3"                            # Thermodynamic component 3
-    echo "SIO2"                             # Thermodynamic component 4
-    echo "CAO"                              # Thermodynamic component 5
-    echo "FEO"                              # Thermodynamic component 6
+    echo "Na2O"                             # Thermodynamic component 1
+    echo "MgO"                              # Thermodynamic component 2
+    echo "Al2O3"                            # Thermodynamic component 3
+    echo "SiO2"                             # Thermodynamic component 4
+    echo "CaO"                              # Thermodynamic component 5
+    echo "FeO"                              # Thermodynamic component 6
     echo ""                                 # End of thermodynamic components selection
-    echo "5"				    # Select fluid equation of state
+    echo "5"                                # Fluid EoS
     echo "n"                                # Make P dependent on T (Y/N)
     echo "2"                                # Select x-axis variable (2 for T(K))
     echo "273"                              # Minimum T(K)
     echo "1800"                             # Maximum T(K)
-    echo "2"				    # Select y-axis variable P(bar) or Y(CO2)
+    echo "2"                                # Select y-axis variable (2 for P(bar))
     echo "15"                               # Minimum P(bar)
     echo "150000"                           # Maximum P(bar)
-    echo "0.5"				    # Specify sectioning value for: Y(CO2)
+    echo "0.5"                              # Sectioning value for CO2
     echo "y"                                # Specify component amounts by mass (Y/N)
-    echo "2.70 7.56 14.89 48.99 11.26 9.86 2.37 2.37" # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO, H2O, CO2
+    echo "3.27 3.59 15.40 66.60 3.59 5.00" # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO, H2O, CO2
     echo "n"                                # Output a print file (Y/N)
     echo "n"                                # Exclude pure/endmember phases (Y/N)
     echo "y"                                # Include solution models (Y/N)
@@ -47,12 +47,12 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "Cpx(HP)"                          # Solution model: Cpx
     echo "Opx(HP)"                          # Solution model: Opx
     echo "Gt(HP)"                           # Solution model: Gt
-    echo "HOS-Fluid"                        # Solution model: melts
-    echo "HO-Fluid"                         # Solution model: melts
     echo "melt(HGPH)"                       # Solution model: melts
     echo "melt(G)"                          # Solution model: melts
-    echo "Melt(A)"                          # Solution model: melts
-    echo "Melt(B)"			    # Solution model: melts
+    echo "Melt(JH)"                         # Solution model: melts
+    echo "melt(W)"			    # Solution model: melts
+    echo "melt(HP)"			    # Solution model: melts
+    echo "melt(TH)"			    # Solution model: melts
     echo ""                                 # End of solution model selection
     echo "${project_name}-${composition_name}"  # Calculation title (same as project name)
 } > "$input_file"

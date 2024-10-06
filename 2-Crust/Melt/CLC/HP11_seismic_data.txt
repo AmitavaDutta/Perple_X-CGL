@@ -1,0 +1,266 @@
+
+Seismic wavespeed computational options:
+
+    bounds                  VRH       [VRH] HS
+    vrh/hs_weighting        0.5       [0.5] 0->1
+    explicit_bulk_modulus   T         [T] F
+    poisson_ratio           on        [on] all off; Poisson ratio = 0.35
+    seismic_output          som       [some] none all
+    poisson_test            F         [F] T
+    Anderson-Gruneisen      F         [F] T
+    Tisza_test              F         [F] T
+    fluid_shear_modulus     T         [T] F
+    phi_d                   0.36      [0.36] 0->1
+
+In the tables below: implicit moduli are calculated rigorously from the EoS,
+explicit moduli are computed from empirical functions provided in the
+thermodynamic data file.
+
+
+Endmembers and stoichiometric compounds:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+        fo            implicit    Poisson                  
+        fa            implicit    Poisson                  
+        lrn           implicit    Poisson                  
+        mont          implicit    Poisson                  
+        chum          implicit    Poisson                  
+        chdr          implicit    Poisson                  
+        mwd           implicit    Poisson                  
+        fwd           implicit    Poisson                  
+        mrw           implicit    Poisson                  
+        frw           implicit    Poisson                  
+        mpv           implicit    Poisson                  
+        fpv           implicit    Poisson                  
+        apv           implicit    Poisson                  
+        npv           implicit    Poisson                  
+        ppv           implicit    Poisson                  
+        cpv           implicit    Poisson                  
+        mak           implicit    Poisson                  
+        fak           implicit    Poisson                  
+        maj           implicit    Poisson                  
+        nagt          implicit    Poisson                  
+        py            implicit    Poisson                  
+        alm           implicit    Poisson                  
+        gr            implicit    Poisson                  
+        vsv           implicit    Poisson                  
+        and           implicit    Poisson                  
+        ky            implicit    Poisson                  
+        sill          implicit    Poisson                  
+        smul          implicit    Poisson                  
+        amul          implicit    Poisson                  
+        tpz           implicit    Poisson                  
+        mst           implicit    Poisson                  
+        fst           implicit    Poisson                  
+        mctd          implicit    Poisson                  
+        fctd          implicit    Poisson                  
+        merw          implicit    Poisson                  
+        spu           implicit    Poisson                  
+        zo            implicit    Poisson                  
+        cz            implicit    Poisson                  
+        law           implicit    Poisson                  
+        mpm           implicit    Poisson                  
+        fpm           implicit    Poisson                  
+        geh           implicit    Poisson                  
+        ak            implicit    Poisson                  
+        rnk           implicit    Poisson                  
+        ty            implicit    Poisson                  
+        crd           implicit    Poisson                  
+        hcrd          implicit    Poisson                  
+        fcrd          implicit    Poisson                  
+        phA           implicit    Poisson                  
+        phD           implicit    Poisson                  
+        phE           implicit    Poisson                  
+        shB           implicit    Poisson                  
+        cstn          implicit    Poisson                  
+        en            implicit    Poisson                  
+        pren          implicit    Poisson                  
+        cen           implicit    Poisson                  
+        hen           implicit    Poisson                  
+        hfs           implicit    Poisson                  
+        fs            implicit    Poisson                  
+        mgts          implicit    Poisson                  
+        di            implicit    Poisson                  
+        hed           implicit    Poisson                  
+        jd            implicit    Poisson                  
+        cats          implicit    Poisson                  
+        caes          implicit    Poisson                  
+        wo            implicit    Poisson                  
+        pswo          implicit    Poisson                  
+        wal           implicit    Poisson                  
+        tr            implicit    Poisson                  
+        ftr           implicit    Poisson                  
+        ts            implicit    Poisson                  
+        parg          implicit    Poisson                  
+        gl            implicit    Poisson                  
+        fgl           implicit    Poisson                  
+        nyb           implicit    Poisson                  
+        anth          implicit    Poisson                  
+        fanth         implicit    Poisson                  
+        cumm          implicit    Poisson                  
+        grun          implicit    Poisson                  
+        ged           implicit    Poisson                  
+        spr4          implicit    Poisson                  
+        spr5          implicit    Poisson                  
+        fspr          implicit    Poisson                  
+        mcar          implicit    Poisson                  
+        fcar          implicit    Poisson                  
+        pa            implicit    Poisson                  
+        ma            implicit    Poisson                  
+        naph          implicit    Poisson                  
+        clin          implicit    Poisson                  
+        ames          implicit    Poisson                  
+        afchl         implicit    Poisson                  
+        daph          implicit    Poisson                  
+        sud           implicit    Poisson                  
+        fsud          implicit    Poisson                  
+        prl           implicit    Poisson                  
+        ta            implicit    Poisson                  
+        fta           implicit    Poisson                  
+        tats          implicit    Poisson                  
+        minn          implicit    Poisson                  
+        minm          implicit    Poisson                  
+        kao           implicit    Poisson                  
+        pre           implicit    Poisson                  
+        chr           implicit    Poisson                  
+        liz           implicit    Poisson                  
+        glt           implicit    Poisson                  
+        atg           implicit    Poisson                  
+        ab            implicit    Poisson                  
+        abh           implicit    Poisson                  
+        an            implicit    Poisson                  
+        q             implicit    Poisson                  
+        trd           implicit    Poisson                  
+        crst          implicit    Poisson                  
+        coe           implicit    Poisson                  
+        stv           implicit    Poisson                  
+        ne            implicit    Poisson                  
+        cg            implicit    Poisson                  
+        cgh           implicit    Poisson                  
+        macf          implicit    Poisson                  
+        mscf          implicit    Poisson                  
+        fscf          implicit    Poisson                  
+        nacf          implicit    Poisson                  
+        cacf          implicit    Poisson                  
+        manal         implicit    Poisson                  
+        nanal         implicit    Poisson                  
+        msnal         implicit    Poisson                  
+        fsnal         implicit    Poisson                  
+        canal         implicit    Poisson                  
+        me            implicit    Poisson                  
+        wrk           implicit    Poisson                  
+        lmt           implicit    Poisson                  
+        heu           implicit    Poisson                  
+        stlb          implicit    Poisson                  
+        anl           implicit    Poisson                  
+        lime          implicit    Poisson                  
+        per           implicit    Poisson                  
+        fper          implicit    Poisson                  
+        wu            implicit    Poisson                  
+        cor           implicit    Poisson                  
+        mcor          implicit    Poisson                  
+        sp            implicit    Poisson                  
+        herc          implicit    Poisson                  
+        nsp           implicit    Poisson                  
+        nherc         implicit    Poisson                  
+        br            implicit    Poisson                  
+        dsp           implicit    Poisson                  
+        cc            implicit    Poisson                  
+        arag          implicit    Poisson                  
+        mag           implicit    Poisson                  
+        sid           implicit    Poisson                  
+        dol           implicit    Poisson                  
+        ank           implicit    Poisson                  
+        perL          implicit    fluid                    
+        limL          implicit    fluid                    
+        corL          implicit    fluid                    
+        qL            implicit    fluid                    
+        foL           implicit    fluid                    
+        faL           implicit    fluid                    
+        woL           implicit    fluid                    
+        enL           implicit    fluid                    
+        diL           implicit    fluid                    
+        silL          implicit    fluid                    
+        anL           implicit    fluid                    
+        abL           implicit    fluid                    
+        neL           implicit    fluid                    
+        fbr           implicit    Poisson      made entity*
+        fchum         implicit    Poisson      made entity*
+        fphA          implicit    Poisson      made entity*
+        fatg          implicit    Poisson      made entity*
+        atgts         implicit    Poisson      made entity*
+        ts_dqf        implicit    Poisson      made entity*
+        parg_dqf      implicit    Poisson      made entity*
+        gl_dqf        implicit    Poisson      made entity*
+        cumm_dqf      implicit    Poisson      made entity*
+        grun_dqf      implicit    Poisson      made entity*
+        ogl_dqf       implicit    Poisson      made entity*
+        fanth_dq      implicit    Poisson      made entity*
+        mpa           implicit    Poisson      made entity*
+        ged_dqf       implicit    Poisson      made entity*
+        coma          implicit    Poisson      made entity*
+        ma_dqf        implicit    Poisson      made entity*
+        sil8L         implicit    fluid        made entity*
+        fo8L          implicit    fluid        made entity*
+        fa8L          implicit    fluid        made entity*
+        q8L           implicit    fluid        made entity*
+        ma1_dqf       implicit    Poisson      made entity*
+        cfs           implicit    Poisson      made entity*
+        cenjh         implicit    Poisson      made entity*
+        odi           implicit    Poisson      made entity*
+        qjL           implicit    fluid        made entity*
+        dijL          implicit    fluid        made entity*
+        jdjL          implicit    fluid        made entity*
+        ctjL          implicit    fluid        made entity*
+        fojL          implicit    fluid        made entity*
+        fajL          implicit    fluid        made entity*
+        cfsg          implicit    Poisson      made entity*
+        nacfb         implicit    Poisson      made entity*
+        mfpv          implicit    Poisson      made entity*
+        mcpv          implicit    Poisson      made entity*
+        mnpv          implicit    Poisson      made entity*
+        cmpv          implicit    Poisson      made entity*
+        cfpv          implicit    Poisson      made entity*
+        capv          implicit    Poisson      made entity*
+        cnpv          implicit    Poisson      made entity*
+        fcor          implicit    Poisson      made entity*
+        hmgts         implicit    Poisson      made entity*
+        isp           implicit    Poisson      made entity*
+        iherc         implicit    Poisson      made entity*
+        ojd           implicit    Poisson      made entity*
+        foHL          implicit    fluid        made entity*
+        faHL          implicit    fluid        made entity*
+        qHL           implicit    fluid        made entity*
+        jdL           implicit    fluid        made entity*
+        foWL          implicit    fluid        made entity*
+        faWL          implicit    fluid        made entity*
+        qWL           implicit    fluid        made entity*
+        jdWL          implicit    fluid        made entity*
+        qTHL          implicit    fluid        made entity*
+        foTHL         implicit    fluid        made entity*
+        faTHL         implicit    fluid        made entity*
+        neTHL         implicit    fluid        made entity*
+        ispTH         implicit    Poisson      made entity*
+        ojdTH         implicit    Poisson      made entity*
+
+*explicit moduli of made endmembers are computed as a linear combination of 
+the real endmembers specified in the corresponding make definition.
+
+
+Solutions:
+
+                      Bulk Mod    Shear Mod 
+                      ---------   ---------
+      melt(HGPH)      implicit    liquid   
+      melt(G)         implicit    liquid   
+      Melt(JH)        implicit    liquid   
+      melt(W)         implicit    liquid   
+      Opx(HP)         implicit    Poisson  
+      Pl(h)           implicit    Poisson  
+      O(HP)           implicit    Poisson  
+      Sp(HP)          implicit    Poisson  
+      Gt(HP)          implicit    Poisson  
+      Cpx(HP)         implicit    Poisson  
+      melt(HP)        implicit    liquid   
+      melt(TH)        implicit    liquid   

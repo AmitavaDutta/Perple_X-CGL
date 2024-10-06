@@ -14,7 +14,7 @@ fi
 
 # Prompt for the thermodynamic data file name
 echo "Files in this directory:"
-ls *.dat
+ls hp*.dat
 read -p "Enter the thermodynamic data file name: " thermo_datafile
 
 # Extract the composition data (lines 29-34)
@@ -46,6 +46,7 @@ input_file="input.txt"	    # For all the input and their functions check https:/
     echo "2"                # Operational mode: properties on a 2d grid
     echo "38"               # Select a property: multiple property output
     echo "1"                # Properties of the system
+    echo "y"                # Include fluid in computation of aggregate (or modal) properties (y/n)? Y for Melt
     echo "2"                # Property: Density (kg/m3)
     echo "3"                # Property: Specific heat capacity (J/K/m3)
     echo "19"               # Property: Heat Capacity (J/K/kg)
