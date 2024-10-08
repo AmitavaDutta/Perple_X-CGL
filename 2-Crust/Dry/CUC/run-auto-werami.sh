@@ -46,12 +46,12 @@ input_file="input.txt"	    # For all the input and their functions check https:/
     echo "2"                # Operational mode: properties on a 2d grid
     echo "38"               # Select a property: multiple property output
     echo "1"                # Properties of the system
-    echo "n"                # Include fluid in computation of aggregate (or modal) properties (y/n)? N for Dry
+    #echo "n"                # Include fluid in computation of aggregate (or modal) properties (y/n)? N for Dry
     echo "2"                # Property: Density (kg/m3)
-    echo "3"                # Property: Specific heat capacity (J/K/m3)
-    echo "19"               # Property: Heat Capacity (J/K/kg)
     echo "13"               # Property: P-wave velocity (Vp, km/s)
     echo "14"               # Property: S-wave velocity (Vs, km/s)
+    echo "3"                # Property: Specific heat capacity (J/K/m3)
+    echo "19"               # Property: Heat Capacity (J/K/kg)
     echo "27"               # Property: P-wave velocity T derivative (km/s/K)
     echo "28"               # Property: S-wave velocity T derivative (km/s/K)
     echo "32"               # Property: P-wave velocity P derivative (km/s/bar)

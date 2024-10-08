@@ -9,19 +9,19 @@ input_file="build_input.txt"  # For all the input and their functions check http
 
 {
     echo "$project_name"                    # Project name
-    echo "hp633ver.dat"                      # Thermodynamic data file
+    echo "hp02ver.dat"                      # Thermodynamic data file
     echo "perplex_option.dat"               # Computational option file
     echo "n"                                # Transform components (Y/N)
     echo "2"                                # Computational mode (2d grid)
     echo "n"                                # Calculations with saturated fluids (Y/N)
     echo "n"  				    # Calculations with saturated components (Y/N)?
     echo "n"                                # Use chemical potentials, activities, fugacities (Y/N)
-    echo "Na2O"                             # Thermodynamic component 1
-    echo "MgO"                              # Thermodynamic component 2
-    echo "Al2O3"                            # Thermodynamic component 3
-    echo "SiO2"                             # Thermodynamic component 4
-    echo "CaO"                              # Thermodynamic component 5
-    echo "FeO"                              # Thermodynamic component 6
+    echo "NA2O"                             # Thermodynamic component 1
+    echo "MGO"                              # Thermodynamic component 2
+    echo "AL2O3"                            # Thermodynamic component 3
+    echo "SIO2"                             # Thermodynamic component 4
+    echo "CAO"                              # Thermodynamic component 5
+    echo "FEO"                              # Thermodynamic component 6
     echo ""                                 # End of thermodynamic components selection
     echo "n"                                # Make P dependent on T (Y/N)
     echo "2"                                # Select x-axis variable (2 for T(K))
@@ -30,7 +30,7 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "15"                               # Minimum P(bar)
     echo "150000"                           # Maximum P(bar)
     echo "y"                                # Specify component amounts by mass (Y/N)
-    echo "3.27 3.59 15.40 66.60 3.59 5.00" # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO, H2O, CO2
+    echo "3.27 2.50 15.40 66.60 3.59 5.00" # Mass amounts for NA2O, MGO, AL2O3, SIO2, CAO, FEO, H2O, CO2
     echo "n"                                # Output a print file (Y/N)
     echo "n"                                # Exclude pure/endmember phases (Y/N)
     echo "y"                                # Include solution models (Y/N)
@@ -42,12 +42,6 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "Cpx(HP)"                          # Solution model: Cpx
     echo "Opx(HP)"                          # Solution model: Opx
     echo "Gt(HP)"                           # Solution model: Gt
-    echo "melt(HGPH)"                       # Solution model: melts
-    echo "melt(G)"                          # Solution model: melts
-    echo "Melt(JH)"                         # Solution model: melts
-    echo "melt(W)"			    # Solution model: melts
-    echo "melt(HP)"			    # Solution model: melts
-    echo "melt(TH)"			    # Solution model: melts
     echo ""                                 # End of solution model selection
     echo "${project_name}-${composition_name}"  # Calculation title (same as project name)
 } > "$input_file"
