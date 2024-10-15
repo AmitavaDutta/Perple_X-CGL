@@ -1,0 +1,8 @@
+#ignore everything
+*
+# except
+!datafiles
+!comp-input
+!vel-perplex.sh
+!output-files
+!.gitignore
