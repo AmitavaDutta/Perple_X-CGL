@@ -109,7 +109,7 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "2"                                   # Computational mode (2d grid)
     echo "n"                                   # Calculations with saturated fluids (Y/N)    
     echo "n"                                   # Calculations with saturated components (Y/N)
-    #echo "n"                                   # Use chemical potentials, activities, fugacities (Y/N)
+    echo "n"                                   # Use chemical potentials, activities, fugacities (Y/N)
 
     # Loop through the components array and echo each component
     for component in "${components[@]}"; do
@@ -128,6 +128,11 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "$mass_amounts"                       # Mass amounts for components
     echo "n"                                   # Output a print file (Y/N)
     echo "n"                                   # Exclude pure/endmember phases (Y/N)
+    echo "n"                                   # Do you want to be prompted for phases (Y/N)? 
+    echo "cz"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "afchl"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "h2oL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "tiGL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"           # Solution model file
     echo "O(HP)"                               # Solution model: O
@@ -142,7 +147,7 @@ input_file="build_input.txt"  # For all the input and their functions check http
 
 
 # Run BUILD using the generated input file
-build < "$input_file"
+/home/ajay/projects/Perple_X-7.1.6/src/build < "$input_file"
 
 # Check if BUILD ran successfully
 if [ $? -eq 0 ]; then
@@ -157,7 +162,7 @@ input_file="vertex_input.txt"
     echo "$project_name"                     # Project name
 } > "$input_file"
 # Run VERTEX using the generated input file
-vertex < "$input_file"
+/home/ajay/projects/Perple_X-7.1.6/src/vertex < "$input_file"
 
 # Check if VERTEX ran successfully
 if [ $? -eq 0 ]; then
@@ -209,7 +214,7 @@ input_file="werami_input.txt"	    # For all the input and their functions check 
 } > "$input_file"
 
 # Run WERAMI with the input file
-werami < "$input_file"
+/home/ajay/projects/Perple_X-7.1.6/src/werami < "$input_file"
 
 # Final output file with the composition name
 output_file="${project_name}.tab"
