@@ -1,0 +1,10 @@
+#ignore everything
+*
+# except
+!1-Project-Vel
+!2-Crust
+!3-Sublithospheric-Mantle-Stx
+!scripts
+!4-vel-models
+!README.md
+!.gitignore
