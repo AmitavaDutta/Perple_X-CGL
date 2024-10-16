@@ -314,5 +314,5 @@ mv "${project_name}_"* "$project_dir"
 rm build_input.txt vertex_input.txt werami_input.txt
 
 
-echo "Output has been written to the file: ${output_file} and copied to $output_dir"
+echo "Output has been written to the file: ${output_file} and copied to $output_files"
 
