@@ -5,7 +5,7 @@ datafiles_dir="./datafiles"
 # Define the composition files directory
 comp_files="./comp-input"
 # Define the output files directory
-output_files="./output-files"
+output_dir="./output-files"
 
 # Check if the datafiles directory exists
 if [ ! -d "$datafiles_dir" ]; then
@@ -14,20 +14,20 @@ if [ ! -d "$datafiles_dir" ]; then
 fi
 
 # Check if the output-files directory exists, create it if not
-if [ ! -d "$output_files" ]; then
-    mkdir "$output_files"
+if [ ! -d "$output_dir" ]; then
+    mkdir "$output_dir"
 fi
 # Prompt the user for the project name
 read -p "Enter a name for the project (this name shall contain short info about themodynamic datafile and the composition): " project_name
 echo "Your project is ${project_name}.dat"
 echo -e "\n"
 # Set a default value for the thermodynamic data file if the user presses enter
-echo "Default Thermodynamic data file is hp02ver.dat"
+echo "Default Thermodynamic data file is hp633ver.dat"
 echo "Some available examples of thermodynamic data files are: " #hp02ver.dat, hp633ver.dat, stx21ver.dat and stx24ver.dat
 ls datafiles/hp*
 ls datafiles/stx*
 read -p "Enter the thermodynamic data file name (press Enter for default): " thermo_datafile
-thermo_datafile=${thermo_datafile:-hp02ver.dat}
+thermo_datafile=${thermo_datafile:-hp633ver.dat}
 
 # Check if the thermodynamic data file exists in the /datafiles directory
 if [ ! -f "$datafiles_dir/$thermo_datafile" ]; then
@@ -173,16 +173,17 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "y"                                   # Exclude pure/endmember phases (Y/N)
     echo "n"                                   # Do you want to be prompted for phases (Y/N)? 
     echo "ne"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "feo"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "na2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "k2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "cao"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "al2o3"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "ab"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "q"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "sil8L"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "lc"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "san"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "san"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "lc"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "q"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "sil8L"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qjL"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    #echo "feo"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    #echo "na2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    #echo "k2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    #echo "cao"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    #echo "al2o3"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
     #echo "h2oL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     #echo "tiGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo ""
@@ -190,20 +191,20 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "$datafiles_dir/$soln_mod"            # Solution model file
     echo "O(HP)" 			       # Solution Model Phases
     echo "Sp(HP)"  			       # Solution Model Phases
-    echo "Gt(stx8)"  			       # Solution Model Phases
-    echo "C2_c(jca)"  			       # Solution Model Phases
+    echo "Gt(HP)"  			       # Solution Model Phases
     echo "Opx(HP)"  			       # Solution Model Phases
     echo "Cpx(HP)" 			       # Solution Model Phases
     echo "Pl(h)" 			       # Solution Model Phases
-    echo "Wad(stx8)" 			       # Solution Model Phases
-    echo "San(TH)"  			       # Solution Model Phases
-    echo "GlTrTsPg" 			       # Solution Model Phases
-    echo "B" 	         		       # Solution Model Phases
-    echo "Chl(HP)" 			       # Solution Model Phases
-    echo "KN-Phen" 			       # Solution Model Phases
-    echo "T" 			               # Solution Model Phases
-    echo "A-phase" 			       # Solution Model Phases
-    echo "Atg" 			               # Solution Model Phases
+    echo "Wad" 			       # Solution Model Phases
+    #echo "San(TH)"  			       # Solution Model Phases
+    #echo "C2_c(jca)"  			       # Solution Model Phases    
+    #echo "GlTrTsPg" 			       # Solution Model Phases
+    #echo "B" 	         		       # Solution Model Phases
+    #echo "Chl(HP)" 			       # Solution Model Phases
+    #echo "KN-Phen" 			       # Solution Model Phases
+    #echo "T" 			               # Solution Model Phases
+    #echo "A-phase" 			       # Solution Model Phases
+    #echo "Atg" 			               # Solution Model Phases
     echo ""                                    # End of solution model selection
     echo "${project_name}"                     # Calculation title (same as project name)
 } > "$input_file"
@@ -260,7 +261,7 @@ input_file="werami_input.txt"	    # For all the input and their functions check 
     echo "2"                # Operational mode: properties on a 2d grid
     echo "38"               # Select a property: multiple property output
     echo "1"                # Properties of the system
-    echo "y"                # Include fluid in computation of aggregate (or modal) properties (y/n)?
+    echo "n"                # Include fluid in computation of aggregate (or modal) properties (y/n)?
     echo "2"                # Property: Density (kg/m3)
     echo "13"               # Property: P-wave velocity (Vp, km/s)
     echo "14"               # Property: S-wave velocity (Vs, km/s)    
@@ -303,7 +304,7 @@ sed -i '9,21s/^/# /' "$output_file"
 
 # Copy the final output file to both the project directory and the output-files directory
 cp "$output_file" "$project_dir"
-cp "$output_file" "$output_files"
+cp "$output_file" "$output_dir"
 
 # Move all files with the ${project_name}.* pattern to the project directory
 mv "${project_name}."* "$project_dir"
@@ -314,5 +315,4 @@ mv "${project_name}_"* "$project_dir"
 rm build_input.txt vertex_input.txt werami_input.txt
 
 
-echo "Output has been written to the file: ${output_file} and copied to $output_files"
-
+echo "Output has been written to the file: ${output_file} and copied to $output_dir"
