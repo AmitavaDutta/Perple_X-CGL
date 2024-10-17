@@ -2,7 +2,8 @@
 *
 # except
 !1-Project-Vel
-!1-Project-Vel/**
+!1-Project-Vel/comp-input
+!1-Project-Vel/output-files
 !scripts
 !README.md
 !.gitignore
