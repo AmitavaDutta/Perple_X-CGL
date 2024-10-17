@@ -2,7 +2,7 @@
 
 [vel-perplex.sh](https://github.com/AmitavaDutta/Perple_X-CGL/blob/main/1-Project-Vel/vel-perplex.sh) is a shell script to execute BUILD, VERTEX, WERAMI functions of [Perple_X ([Connolly 2005](#Connolly_2005), [Connolly 2009](#Connolly_2009)](https://www.perplex.ethz.ch/) automatically.
 
-# **The format of the directory set-up to be followed as shown here for easier workflow according to the script.** Any changes here needs to be reflected on the script as well.
+#### **The format of the directory set-up to be followed as shown here for easier workflow according to the script.** Any changes here needs to be reflected on the script as well.
 ![Workflow](workflow.png)
 
 Format for the composition file
@@ -23,7 +23,7 @@ To run the script make it an executable and then
 ./vel-perplex.sh
 ```
 
-# Promts for the user input
+#### Promts for the user input
 ```
 # Prompt the user for the project name
 read -p "Enter a name for the project (this name shall contain short info about themodynamic datafile and the composition): " project_name
@@ -146,7 +146,7 @@ echo "Composition is $composition_name"
 ```
 The directories are arranged based on the script design. **Any changes in directory path/file path needs to be reflected here.*
 
-# BUILD Inputs
+#### BUILD Inputs
 ```
 {
     echo "$project_name"                       # Project name
@@ -219,7 +219,7 @@ The directories are arranged based on the script design. **Any changes in direct
 All input parameters are based on wrok preferences.
 **Suggestion: Run the build manually before executing the code. The input prompts changes based on the requiremnts of the job**
 
-# WERAMI Inputs
+#### WERAMI Inputs
 ```
 input_file="werami_input.txt"	    # For all the input and their functions check https://www.perplex.ethz.ch/perplex_66_seismic_velocity.html#top
 {
@@ -251,7 +251,7 @@ All input parameters are based on wrok preferences.
 
 The script is designed such a way all the outputs will be visble in a directory creadted during execution named after the project name as per user input and all the .tab files containig the metadata and the various physical properties based varying with Pressure and Temperature is also placed onto another directory called **./output-files**
 
-# Promt for the metadata
+#### Promt for the metadata
 ```
 # Extract the composition data (lines 29-34)
 comp_data=$(sed -n '29,35p' "${project_name}.dat" | awk '{print $1, $3}')
