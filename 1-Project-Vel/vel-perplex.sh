@@ -176,16 +176,19 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "ab"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "san"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "lc"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "q"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "sil8L"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qjL"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "feo"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "na2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "k2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "cao"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "al2o3"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "h2oL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "tiGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qjL"			               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qHL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "q8L"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "crst"			               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "trd"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qL"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "q"		                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "kjdTH"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "kjdh"                                #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qTHL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "qWL"	                      	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "anL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo ""
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"            # Solution model file
@@ -193,9 +196,9 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "Sp(HP)"  			       # Solution Model Phases
     echo "Gt(HP)"  			       # Solution Model Phases
     echo "Opx(HP)"  			       # Solution Model Phases
-    echo "Cpx(HP)" 			       # Solution Model Phases
+    #echo "Cpx(HP)" 			       # Solution Model Phases
     echo "Pl(h)" 			       # Solution Model Phases
-    echo "Wad" 			       # Solution Model Phases
+    echo "Wad" 			               # Solution Model Phases
     #echo "San(TH)"  			       # Solution Model Phases
     #echo "C2_c(jca)"  			       # Solution Model Phases    
     #echo "GlTrTsPg" 			       # Solution Model Phases
@@ -204,7 +207,7 @@ input_file="build_input.txt"  # For all the input and their functions check http
     #echo "KN-Phen" 			       # Solution Model Phases
     #echo "T" 			               # Solution Model Phases
     #echo "A-phase" 			       # Solution Model Phases
-    #echo "Atg" 			               # Solution Model Phases
+    #echo "Atg" 			       # Solution Model Phases
     echo ""                                    # End of solution model selection
     echo "${project_name}"                     # Calculation title (same as project name)
 } > "$input_file"
@@ -316,3 +319,4 @@ rm build_input.txt vertex_input.txt werami_input.txt
 
 
 echo "Output has been written to the file: ${output_file} and copied to $output_dir"
+
