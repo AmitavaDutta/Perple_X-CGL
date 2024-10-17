@@ -65,15 +65,6 @@ fi
 echo "Solution Model is $soln_mod"
 echo -e "\n"
 
-#Composition Name
-#echo "Currently available Compositions are:"
-#ls comp-input/
-#read -p "Enter a name of the Composition: " composition_name
-# Check if the solution model file exists in the /datafiles directory
-#composition_file="$comp_files/$composition_name"
-
-#!/bin/bash
-
 # Ask the user whether they want Crust or Mantle
 read -p "Do you want to calculate for Crust or Mantle? " layer_type
 
@@ -239,10 +230,10 @@ else
 fi
 
 # Extract the composition data (lines 29-34)
-comp_data=$(sed -n '29,34p' "${project_name}.dat" | awk '{print $1, $3}')
+comp_data=$(sed -n '29,35p' "${project_name}.dat" | awk '{print $1, $3}')
 
 # Extract T and P ranges (lines 65-66)
-t_p_range=$(sed -n '65,66p' "${project_name}.dat" | awk '{print $1, $2}')
+t_p_range=$(sed -n '81,82p' "${project_name}.dat" | awk '{print $1, $2}')
 
 # Format composition data (columns 1 and 3)
 comp_elements=$(echo "$comp_data" | awk '{printf "%s\t", $1}')  # Elements separated by tab
