@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------
+     Timing                    min.         % of total
+
+  Static G calculation       0.28279            11.6
+  Dynamic G calculation      0.27778            11.4
+  Static LP                  0.94884E-01         3.9
+  Dynamic LP                 0.92718            38.1
+  Successive QP              0.76641            31.5
+  Total of above              2.3490            96.6
+  Total elapsed time          2.4306           100.0
+--------------------------------------------------------------------------------
+  Other statistics:
+
+     Good SLP minimizations             33166
+     Bad SLP minimizations                  0
+     Good SQP minimizations           2341962
+     Bad SQP minimizations              20772
+     SQP G evaluations               23073939
+--------------------------------------------------------------------------------

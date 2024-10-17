@@ -1,0 +1,259 @@
+
+--------------------------------------------------------------------------------
+
+
+Problem title: HP-dry-CUC                                                                                                                                                        
+
+Thermodynamic data base from: Holland & Powell, JMG 2011 (TC-DS633, 23 Jun,2017) + additional data            
+
+Fluid equation of state: X(CO2) H2O-CO2 Modified Redlich-Kwong (MRK) DeSantis et al 74  
+
+Independently constrained potentials:
+
+   T(K)     P(bar)  
+
+Components with unconstrained potentials:
+
+   Na2O    MgO     Al2O3   SiO2    K2O     CaO     FeO  
+
+Phases and (projected) compositions:
+
+            Na2O    MgO     Al2O3   SiO2    K2O     CaO     FeO  
+   fo        0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fa        0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   lrn       0.000   0.000   0.000   0.333   0.000   0.667   0.000
+   mont      0.000   0.333   0.000   0.333   0.000   0.333   0.000
+   mwd       0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fwd       0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   mrw       0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   frw       0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   mpv       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   fpv       0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   apv       0.000   0.000   1.000   0.000   0.000   0.000   0.000
+   npv       0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   ppv       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   cpv       0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   mak       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   fak       0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   maj       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   nagt      0.071   0.286   0.071   0.571   0.000   0.000   0.000
+   py        0.000   0.429   0.143   0.429   0.000   0.000   0.000
+   alm       0.000   0.000   0.143   0.429   0.000   0.000   0.429
+   gr        0.000   0.000   0.143   0.429   0.000   0.429   0.000
+   osma      0.000   0.133   0.167   0.667   0.033   0.000   0.000
+   osmm      0.000   0.188   0.094   0.688   0.031   0.000   0.000
+   osfa      0.000   0.000   0.167   0.667   0.033   0.000   0.133
+   and       0.000   0.000   0.500   0.500   0.000   0.000   0.000
+   ky        0.000   0.000   0.500   0.500   0.000   0.000   0.000
+   sill      0.000   0.000   0.500   0.500   0.000   0.000   0.000
+   smul      0.000   0.000   0.500   0.500   0.000   0.000   0.000
+   amul      0.000   0.000   0.714   0.286   0.000   0.000   0.000
+   merw      0.000   0.167   0.000   0.333   0.000   0.500   0.000
+   geh       0.000   0.000   0.250   0.250   0.000   0.500   0.000
+   ak        0.000   0.200   0.000   0.400   0.000   0.400   0.000
+   rnk       0.000   0.000   0.000   0.400   0.000   0.600   0.000
+   crd       0.000   0.222   0.222   0.556   0.000   0.000   0.000
+   fcrd      0.000   0.000   0.222   0.556   0.000   0.000   0.222
+   cstn      0.000   0.000   0.000   0.667   0.000   0.333   0.000
+   en        0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   pren      0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   cen       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   hen       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   hfs       0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   fs        0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   mgts      0.000   0.333   0.333   0.333   0.000   0.000   0.000
+   di        0.000   0.250   0.000   0.500   0.000   0.250   0.000
+   hed       0.000   0.000   0.000   0.500   0.000   0.250   0.250
+   jd        0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   kjd       0.000   0.000   0.167   0.667   0.167   0.000   0.000
+   cats      0.000   0.000   0.333   0.333   0.000   0.333   0.000
+   caes      0.000   0.000   0.167   0.667   0.000   0.167   0.000
+   wo        0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   pswo      0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   wal       0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   spr4      0.000   0.400   0.400   0.200   0.000   0.000   0.000
+   spr5      0.000   0.333   0.556   0.111   0.000   0.000   0.000
+   fspr      0.000   0.000   0.400   0.200   0.000   0.000   0.400
+   abh       0.125   0.000   0.125   0.750   0.000   0.000   0.000
+   an        0.000   0.000   0.250   0.500   0.000   0.250   0.000
+   wa        0.000   0.000   0.000   0.800   0.200   0.000   0.000
+   hol       0.000   0.000   0.125   0.750   0.125   0.000   0.000
+   coe       0.000   0.000   0.000   1.000   0.000   0.000   0.000
+   stv       0.000   0.000   0.000   1.000   0.000   0.000   0.000
+   cg        0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   cgh       0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   macf      0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   mscf      0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fscf      0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   nacf      0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   cacf      0.000   0.000   0.500   0.000   0.000   0.500   0.000
+   manal     0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   nanal     0.083   0.333   0.417   0.167   0.000   0.000   0.000
+   msnal     0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fsnal     0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   canal     0.000   0.333   0.500   0.000   0.000   0.167   0.000
+   kls       0.000   0.000   0.250   0.500   0.250   0.000   0.000
+   lime      0.000   0.000   0.000   0.000   0.000   1.000   0.000
+   per       0.000   1.000   0.000   0.000   0.000   0.000   0.000
+   fper      0.000   0.000   0.000   0.000   0.000   0.000   1.000
+   wu        0.000   0.000   0.000   0.000   0.000   0.000   1.000
+   cor       0.000   0.000   1.000   0.000   0.000   0.000   0.000
+   mcor      0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   sp        0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   herc      0.000   0.000   0.500   0.000   0.000   0.000   0.500
+   nsp       0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   nherc     0.000   0.000   0.500   0.000   0.000   0.000   0.500
+   perL      0.000   1.000   0.000   0.000   0.000   0.000   0.000
+   limL      0.000   0.000   0.000   0.000   0.000   1.000   0.000
+   corL      0.000   0.000   1.000   0.000   0.000   0.000   0.000
+   foL       0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   faL       0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   woL       0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   enL       0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   diL       0.000   0.250   0.000   0.500   0.000   0.250   0.000
+   silL      0.000   0.000   0.500   0.500   0.000   0.000   0.000
+   kspL      0.000   0.000   0.125   0.750   0.125   0.000   0.000
+   abL       0.125   0.000   0.125   0.750   0.000   0.000   0.000
+   neL       0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   lcL       0.000   0.000   0.167   0.667   0.167   0.000   0.000
+   fo8L      0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fa8L      0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   cfs       0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   cenjh     0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   odi       0.000   0.250   0.000   0.500   0.000   0.250   0.000
+   dijL      0.000   0.250   0.000   0.500   0.000   0.250   0.000
+   jdjL      0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   ctjL      0.000   0.000   0.333   0.333   0.000   0.333   0.000
+   fojL      0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   fajL      0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   cfsg      0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   nacfb     0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   mfpv      0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   mcpv      0.000   0.000   0.000   0.500   0.000   0.500   0.000
+   mnpv      0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   cmpv      0.000   0.500   0.000   0.500   0.000   0.000   0.000
+   cfpv      0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   capv      0.000   0.000   1.000   0.000   0.000   0.000   0.000
+   cnpv      0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   fcor      0.000   0.000   0.000   0.500   0.000   0.000   0.500
+   hmgts     0.000   0.333   0.333   0.333   0.000   0.000   0.000
+   isp       0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   iherc     0.000   0.000   0.500   0.000   0.000   0.000   0.500
+   ojd       0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   foHL      0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   faHL      0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   jdL       0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   kjL       0.000   0.000   0.167   0.667   0.167   0.000   0.000
+   foWL      0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   faWL      0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   jdWL      0.167   0.000   0.167   0.667   0.000   0.000   0.000
+   kWL       0.000   0.000   0.167   0.667   0.167   0.000   0.000
+   foTHL     0.000   0.667   0.000   0.333   0.000   0.000   0.000
+   faTHL     0.000   0.000   0.000   0.333   0.000   0.000   0.667
+   neTHL     0.250   0.000   0.250   0.500   0.000   0.000   0.000
+   kjTHL     0.000   0.000   0.167   0.667   0.167   0.000   0.000
+   ispTH     0.000   0.500   0.500   0.000   0.000   0.000   0.000
+   ojdTH     0.167   0.000   0.167   0.667   0.000   0.000   0.000
+
+Excluded phases:
+
+ ne        ab        san       lc        sil8L     qjL       qHL     
+ q8L       crst      trd       qL        q         kjdTH     kjdh    
+ qTHL      qWL       anL     
+
+Phases:
+
+ Opx(HP)     Pl(h)       O(HP)       Sp(HP)      Gt(HP)      Wad       
+
+--------------------------------------------------------------------------------
+
+
+ Stable assemblages identified by assemblage index:
+
+   1 - Gt(HP) Opx(HP) Pl(h) osfa di coe kls 
+   2 - Gt(HP) Opx(HP) ky di jd coe kls 
+   3 - Gt(HP) ky cen di jd coe kls 
+   4 - Gt(HP) ky cen di jd wa coe 
+   5 - Gt(HP) ky cen jd wa coe 
+   6 - Gt(HP) ky cen jd wa stv 
+   7 - Gt(HP) Gt(HP) ky jd wa stv 
+   8 - Gt(HP) Gt(HP) ky jd hol stv 
+   9 - Gt(HP) Gt(HP) jd hol stv cor 
+  10 - Gt(HP) Opx(HP) Pl(h) ky di coe kls 
+  11 - Gt(HP) Gt(HP) ky cen jd wa stv 
+  12 - Opx(HP) Pl(h) osfa di coe kls 
+  13 - Gt(HP) Opx(HP) Pl(h) osmm di coe kls 
+  14 - Opx(HP) Pl(h) osmm osfa di coe kls 
+  15 - Gt(HP) ky di jd wa coe 
+  16 - Gt(HP) ky jd wa stv 
+  17 - Gt(HP) ky jd hol stv 
+  18 - Gt(HP) jd hol stv cor 
+  19 - Gt(HP) ky jd wa coe 
+  20 - Gt(HP) ky di jd coe kls 
+  21 - Opx(HP) Pl(h) Pl(h) osmm di coe kls 
+  22 - Gt(HP) ky jd coe kls 
+  23 - Opx(HP) Pl(h) osmm osfa hed coe kls 
+  24 - Opx(HP) Pl(h) osmm di coe kls 
+  25 - Gt(HP) Opx(HP) Pl(h) osmm coe kls 
+  26 - Gt(HP) Opx(HP) Pl(h) di coe kls 
+  27 - Opx(HP) Pl(h) osmm coe kls 
+  28 - Opx(HP) Pl(h) osmm hed coe kls 
+  29 - Gt(HP) Pl(h) ky di coe kls 
+  30 - Gt(HP) Opx(HP) Pl(h) coe kls 
+  31 - Gt(HP) Pl(h) di coe kls 
+  32 - Opx(HP) Pl(h) coe kls 
+  33 - Opx(HP) Pl(h) osmm di coe kspL 
+  34 - Opx(HP) Pl(h) osmm coe kspL 
+  35 - Opx(HP) Pl(h) coe kspL 
+  36 - Gt(HP) Opx(HP) Pl(h) di coe kspL 
+  37 - Gt(HP) ky jd coe kWL 
+  38 - Gt(HP) Opx(HP) Pl(h) coe kspL 
+  39 - Gt(HP) Pl(h) di coe kspL 
+  40 - Gt(HP) ky jd coe kjL 
+  41 - Gt(HP) Pl(h) jd coe kls 
+  42 - Gt(HP) Pl(h) di coe kjL 
+  43 - Gt(HP) Pl(h) jd coe kjL 
+  44 - Opx(HP) Pl(h) di coe kspL 
+  45 - Opx(HP) Pl(h) coe kspL abL 
+  46 - Opx(HP) Pl(h) hed coe kspL 
+  47 - Gt(HP) Opx(HP) Pl(h) di coe kjL 
+  48 - Gt(HP) Opx(HP) Pl(h) hed coe kspL 
+  49 - Gt(HP) Opx(HP) Pl(h) di coe kspL abL 
+  50 - Gt(HP) Pl(h) di coe kspL abL 
+  51 - Gt(HP) Pl(h) di coe abL kjL 
+  52 - Gt(HP) Pl(h) coe kspL abL 
+  53 - Gt(HP) Pl(h) coe abL kjL 
+  54 - Gt(HP) Pl(h) coe kjL jdWL 
+  55 - Opx(HP) Pl(h) hed coe kspL abL 
+  56 - Gt(HP) ky jd stv kWL 
+  57 - Gt(HP) ky coe kjL jdWL 
+  58 - Opx(HP) Pl(h) coe kspL abL fajL 
+  59 - Opx(HP) Pl(h) coe kspL abL dijL fajL 
+  60 - Opx(HP) Pl(h) coe kspL abL dijL 
+  61 - Gt(HP) Opx(HP) Pl(h) hed coe kspL abL 
+  62 - Gt(HP) ky coe abL kjL 
+  63 - Opx(HP) Pl(h) hed coe kspL abL dijL 
+  64 - Gt(HP) Pl(h) coe kspL abL dijL 
+  65 - Gt(HP) Pl(h) ky coe abL kjL 
+  66 - Gt(HP) coe abL ctjL kjL 
+  67 - Gt(HP) coe kspL abL ctjL 
+  68 - Gt(HP) ky coe abL ctjL kjL 
+  69 - Gt(HP) ky coe jdWL kWL 
+  70 - Gt(HP) Opx(HP) Pl(h) osmm ky coe kls 
+  71 - Gt(HP) Opx(HP) Pl(h) osmm osfa coe kls 
+  72 - Opx(HP) Pl(h) Pl(h) osmm hed coe kls 
+  73 - Gt(HP) Opx(HP) Pl(h) Pl(h) osmm coe kls 
+  74 - Opx(HP) Pl(h) Pl(h) osmm coe kls 
+  75 - Opx(HP) Pl(h) osmm di hed coe kls 
+  76 - Gt(HP) Pl(h) di jd coe kls 
+  77 - Gt(HP) Pl(h) ky jd coe kls 
+  78 - Gt(HP) Pl(h) ky jd coe kjL 
+  79 - Gt(HP) Opx(HP) Pl(h) di hed coe kspL 
+  80 - Gt(HP) Pl(h) di jd coe kjL 
+  81 - Gt(HP) Pl(h) di coe kjL jdWL 
+  82 - Gt(HP) Pl(h) ky coe kjL jdWL 
+  83 - Gt(HP) Opx(HP) Pl(h) coe kspL abL dijL 
+  84 - Gt(HP) ky di jd wa stv 
+  85 - Opx(HP) Pl(h) di hed coe kspL 
+  86 - Gt(HP) ky coe ctjL kjL jdWL 
+  87 - Gt(HP) Pl(h) ky di jd coe kls 
