@@ -2,6 +2,7 @@
 *
 # except
 !1-Project-Vel
+!1-Project-Vel/**
 !scripts
 !README.md
 !.gitignore
