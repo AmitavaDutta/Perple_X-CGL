@@ -1,23 +1,11 @@
-# Perple_X-CGL
+### Perple_X-CGL
 
-#Needs change
-Directory Scripts contain the bash scripts for executing build and werami automatically
-It also has some python programmes to plot the Vp, Vs, Rho wtr P and T
+[vel-perplex.sh](https://github.com/AmitavaDutta/Perple_X-CGL/blob/main/1-Project-Vel/vel-perplex.sh) is a shell script to execute BUILD, VERTEX, WERAMI functions of [Perple_X ([Connolly 2005](#Connolly_2005), [Connolly 2009](#Connolly_2009)](https://www.perplex.ethz.ch/) automatically.
 
+## **The format of the directory set-up to be followed as shown here for easier workflow according to the script.** Any changes here needs to be reflected on the script as well.
+![Workflow](workflow.png)
 
-Directory 1-Sublithospheric-Mantle-Stx contains all the executed files using Stixrude 21
-
-
-Directory 2-Crust contains all the executed files for Crust using Holland and Powell 2008
-
-### **For Continental Crust here is a plot of LitMod data onto a Perple_X data where melt is present as Saturated Fluid in Equilibrium with the Bulk Composition**
-![Perple_X v LitMod](./2-Crust/zz-HP02/saturated/CUC-PerpleX_LitMod.png)
-
-#### **Two examples with melt in the system**
-
-### **Considering Melt in as Saturated Fluid in Equilibrium with the Bulk Composition**
-![Considering Melt in as saturated fluid in equilibrium with the Bulk Composition](./2-Crust/zz-HP02/saturated/Vs_OUC.png)
-
-### **Considering Melt in Bulk Composition**
-![Considering Melt in Bulk Composition](./2-Crust/zz-HP02/bulk/Vs_CUC.png)
-
+To run the script make it an executable and then
+```
+./vel-perplex.sh
+```
