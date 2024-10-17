@@ -4,8 +4,9 @@
 
 #### **The format of the directory set-up to be followed as shown here for easier workflow according to the script.** Any changes here needs to be reflected on the script as well.
 ![Workflow](workflow.png)
+Here, [1-Project-Vel](https://github.com/AmitavaDutta/Perple_X-CGL/tree/main/1-Project-Vel) is the main directory and [datafiles](https://github.com/AmitavaDutta/Perple_X-CGL/tree/main/1-Project-Vel/datafiles) & [comp-input](https://github.com/AmitavaDutta/Perple_X-CGL/tree/main/1-Project-Vel/comp-input) are the sub-directories and [vel-perplex.sh](https://github.com/AmitavaDutta/Perple_X-CGL/blob/main/1-Project-Vel/vel-perplex.sh) is the main script.
 
-Format for the composition file
+### Format for the composition file
 ```
 Na2O
 MgO
@@ -248,7 +249,7 @@ All input parameters are based on wrok preferences.
 **Suggestion: Run the build manually before executing the code. The input prompts changes based on the requiremnts of the job**
 
 
-The script is designed such a way all the outputs will be visble in a directory creadted during execution named after the project name as per user input and all the .tab files containig the metadata and the various physical properties based varying with Pressure and Temperature is also placed onto another directory called **./output-files**
+The script is designed such a way all the outputs will be visble in a directory creadted during execution named after the project name as per user input and all the .tab files containig the metadata and the various physical properties based varying with Pressure and Temperature is also placed onto another directory called [output-files](https://github.com/AmitavaDutta/Perple_X-CGL/tree/main/1-Project-Vel/output-files)
 
 ### Promt for the metadata
 ```
