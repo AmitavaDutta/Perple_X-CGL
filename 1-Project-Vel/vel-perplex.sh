@@ -180,6 +180,8 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "qTHL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "qWL"	                      	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
     echo "anL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "prl"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:   
+    echo "h2oL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:       
     echo ""
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"            # Solution model file
@@ -229,11 +231,11 @@ else
     echo "VERTEX encountered an error."
 fi
 
-# Extract the composition data (lines 29-34)
-comp_data=$(sed -n '29,35p' "${project_name}.dat" | awk '{print $1, $3}')
+# Extract the composition data (lines may  vary check the project file)
+comp_data=$(sed -n '29,36p' "${project_name}.dat" | awk '{print $1, $3}')
 
-# Extract T and P ranges (lines 65-66)
-t_p_range=$(sed -n '81,82p' "${project_name}.dat" | awk '{print $1, $2}')
+# Extract T and P ranges (lines may  vary check the project file)
+t_p_range=$(sed -n '83,84p' "${project_name}.dat" | awk '{print $1, $2}')
 
 # Format composition data (columns 1 and 3)
 comp_elements=$(echo "$comp_data" | awk '{printf "%s\t", $1}')  # Elements separated by tab
@@ -255,7 +257,7 @@ input_file="werami_input.txt"	    # For all the input and their functions check 
     echo "2"                # Operational mode: properties on a 2d grid
     echo "38"               # Select a property: multiple property output
     echo "1"                # Properties of the system
-    echo "n"                # Include fluid in computation of aggregate (or modal) properties (y/n)?
+    echo "y"                # Include fluid in computation of aggregate (or modal) properties (y/n)?
     echo "2"                # Property: Density (kg/m3)
     echo "13"               # Property: P-wave velocity (Vp, km/s)
     echo "14"               # Property: S-wave velocity (Vs, km/s)    
