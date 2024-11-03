@@ -17,7 +17,11 @@ CaO
 FeO
 3.21 8.73 15.48 48.3 1.21 9.52 8.87
 ```
-Here the directory name for the composition files are to be followed as per the thermodynamic datfile. **The names are case sensitive**. The script is set up such that it takes the names till the line before it finds a line starting with a numeric character which are the proportion of the components.
+Here the directory name for the composition files are to be followed as per the thermodynamic datfile. 
+
+For example, hp represent the directory that contains the compositions to be calculated for Holland & Powell thermodynamic datafile, similarly stx for Stixrude & Lithgow-Bertelloni etc. The script is made such that it checks with the first part of the thermodynamic datafile name input by the user (the part before the year in thermodynamic datafile name). The script will run only if it matches. 
+
+**The names of composition and the directories are case sensitive**. The script is set up such that it takes the names till the line before it finds a line starting with a numeric character which are the proportion of the components.
 
 To run the script make it an executable and then
 ```
