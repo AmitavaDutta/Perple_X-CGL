@@ -17,7 +17,7 @@ CaO
 FeO
 3.21 8.73 15.48 48.3 1.21 9.52 8.87
 ```
-Here composition names are to be followed as per the thermodynamic datfile. **The names are case sensitive**. The script is set up such that it takes the names till the line before it finds a line starting with a numeric character which are the proportion of the components.
+Here the directory name for the composition files are to be followed as per the thermodynamic datfile. **The names are case sensitive**. The script is set up such that it takes the names till the line before it finds a line starting with a numeric character which are the proportion of the components.
 
 To run the script make it an executable and then
 ```
