@@ -5,7 +5,7 @@ datafiles_dir="./datafiles"
 # Define the composition files directory
 comp_files="./comp-input"
 # Define the output files directory
-output_files="./output-files"
+output_dir="./output-files"
 
 # Check if the datafiles directory exists
 if [ ! -d "$datafiles_dir" ]; then
@@ -14,8 +14,8 @@ if [ ! -d "$datafiles_dir" ]; then
 fi
 
 # Check if the output-files directory exists, create it if not
-if [ ! -d "$output_files" ]; then
-    mkdir "$output_files"
+if [ ! -d "$output_dir" ]; then
+    mkdir "$output_dir"
 fi
 # Prompt the user for the project name
 read -p "Enter a name for the project (this name shall contain short info about themodynamic datafile and the composition): " project_name
@@ -64,15 +64,6 @@ if [ ! -f "$datafiles_dir/$soln_mod" ]; then
 fi
 echo "Solution Model is $soln_mod"
 echo -e "\n"
-
-#Composition Name
-#echo "Currently available Compositions are:"
-#ls comp-input/
-#read -p "Enter a name of the Composition: " composition_name
-# Check if the solution model file exists in the /datafiles directory
-#composition_file="$comp_files/$composition_name"
-
-#!/bin/bash
 
 # Ask the user whether they want Crust or Mantle
 read -p "Do you want to calculate for Crust or Mantle? " layer_type
@@ -164,46 +155,31 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "n"                                   # Make P dependent on T (Y/N)
     echo "2"                                   # Select x-axis variable (2 for T(K))
     echo "273"                                 # Minimum T(K)
-    echo "2000"                                # Maximum T(K)
-    echo "15"                                  # Minimum P(bar)
-    echo "150000"                              # Maximum P(bar)
+    echo "1873"                                # Maximum T(K)
+    echo "10"                                  # Minimum P(bar)
+    echo "150000"                               # Maximum P(bar)
     echo "y"                                   # Specify component amounts by mass (Y/N)
     echo "$mass_amounts"                       # Mass amounts for components
     echo "y"                                   # Output a print file (Y/N)
     echo "y"                                   # Exclude pure/endmember phases (Y/N)
     echo "n"                                   # Do you want to be prompted for phases (Y/N)? 
-    echo "ne"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "feo"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "na2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "k2o"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "cao"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "al2o3"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "ab"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "q"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "sil8L"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "lc"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "san"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "h2oL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    #echo "tiGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
+    echo "q"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry          
+    echo "kalGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry and avg cont crust
+    echo "h2oL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h           
+    #echo "lc"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h + (and & arch) basalt
+    echo "fo8L"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM & cont-crust
+    echo "foL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM  & PUM & cont-crust
+    #echo "nasGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For PUM
+    echo "k2o"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For cont-crust
     echo ""
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"            # Solution model file
     echo "O(HP)" 			       # Solution Model Phases
     echo "Sp(HP)"  			       # Solution Model Phases
-    echo "Gt(stx8)"  			       # Solution Model Phases
-    echo "C2_c(jca)"  			       # Solution Model Phases
+    echo "Gt(HP)"  			       # Solution Model Phases
     echo "Opx(HP)"  			       # Solution Model Phases
     echo "Cpx(HP)" 			       # Solution Model Phases
     echo "Pl(h)" 			       # Solution Model Phases
-    echo "Wad(stx8)" 			       # Solution Model Phases
-    echo "San(TH)"  			       # Solution Model Phases
-    echo "GlTrTsPg" 			       # Solution Model Phases
-    echo "B" 	         		       # Solution Model Phases
-    echo "Chl(HP)" 			       # Solution Model Phases
-    echo "KN-Phen" 			       # Solution Model Phases
-    echo "T" 			               # Solution Model Phases
-    echo "A-phase" 			       # Solution Model Phases
-    echo "Atg" 			               # Solution Model Phases
     echo ""                                    # End of solution model selection
     echo "${project_name}"                     # Calculation title (same as project name)
 } > "$input_file"
@@ -234,11 +210,28 @@ else
     echo "VERTEX encountered an error."
 fi
 
-# Extract the composition data (lines 29-34)
-comp_data=$(sed -n '29,34p' "${project_name}.dat" | awk '{print $1, $3}')
+# Extract the composition data (lines may  vary check the project file)
+#comp_data=$(sed -n '29,36p' "${project_name}.dat" | awk '{print $1, $3}')
 
-# Extract T and P ranges (lines 65-66)
-t_p_range=$(sed -n '65,66p' "${project_name}.dat" | awk '{print $1, $2}')
+# Extract T and P ranges (lines may  vary check the project file)
+#t_p_range=$(sed -n '68,69p' "${project_name}.dat" | awk '{print $1, $2}')
+#t_p_range=$(sed -n '63,64p' "${project_name}.dat" | awk '{print $1, $2}')
+
+# Find the line number for "begin thermodynamic component list"
+lnb=$(grep -n "begin thermodynamic component list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Find the line number for "end thermodynamic component list"
+lne=$(grep -n "end thermodynamic component list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Extract the composition data dynamically based on lnb and lne
+comp_data=$(sed -n "$((lnb + 1)),$((lne - 1))p" "${project_name}.dat" | awk '{print $1, $3}')
+
+# Find the line number for "end solution phase list"
+ln=$(grep -n "end solution phase list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Extract T and P ranges using the calculated line numbers
+t_p_range=$(sed -n "$((ln + 2)),$((ln + 3))p" "${project_name}.dat" | awk '{print $1, $2}')
+
 
 # Format composition data (columns 1 and 3)
 comp_elements=$(echo "$comp_data" | awk '{printf "%s\t", $1}')  # Elements separated by tab
@@ -272,7 +265,7 @@ input_file="werami_input.txt"	    # For all the input and their functions check 
     echo "33"               # Property: S-wave velocity P derivative (km/s/bar)
     echo "0"                # End property selection
     echo "n"                # Change default variable range: No
-    echo "4"                # Grid resolution: 313 x 313 nodes
+    echo "4"                # Grid resolution: 
     echo "y"                # Continue with operation
     echo "0"                # End werami
 } > "$input_file"
@@ -303,7 +296,7 @@ sed -i '9,21s/^/# /' "$output_file"
 
 # Copy the final output file to both the project directory and the output-files directory
 cp "$output_file" "$project_dir"
-cp "$output_file" "$output_files"
+cp "$output_file" "$output_dir"
 
 # Move all files with the ${project_name}.* pattern to the project directory
 mv "${project_name}."* "$project_dir"

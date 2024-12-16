@@ -22,12 +22,12 @@ read -p "Enter a name for the project (this name shall contain short info about 
 echo "Your project is ${project_name}.dat"
 echo -e "\n"
 # Set a default value for the thermodynamic data file if the user presses enter
-echo "Default Thermodynamic data file is hp633ver.dat"
+echo "Default Thermodynamic data file is hp02ver.dat"
 echo "Some available examples of thermodynamic data files are: " #hp02ver.dat, hp633ver.dat, stx21ver.dat and stx24ver.dat
 ls datafiles/hp*
 ls datafiles/stx*
 read -p "Enter the thermodynamic data file name (press Enter for default): " thermo_datafile
-thermo_datafile=${thermo_datafile:-hp633ver.dat}
+thermo_datafile=${thermo_datafile:-hp02ver.dat}
 
 # Check if the thermodynamic data file exists in the /datafiles directory
 if [ ! -f "$datafiles_dir/$thermo_datafile" ]; then
@@ -155,33 +155,22 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "n"                                   # Make P dependent on T (Y/N)
     echo "2"                                   # Select x-axis variable (2 for T(K))
     echo "273"                                 # Minimum T(K)
-    echo "2000"                                # Maximum T(K)
-    echo "15"                                  # Minimum P(bar)
-    echo "150000"                              # Maximum P(bar)
+    echo "1873"                                # Maximum T(K)
+    echo "10"                                  # Minimum P(bar)
+    echo "150000"                               # Maximum P(bar)
     echo "y"                                   # Specify component amounts by mass (Y/N)
     echo "$mass_amounts"                       # Mass amounts for components
     echo "y"                                   # Output a print file (Y/N)
     echo "y"                                   # Exclude pure/endmember phases (Y/N)
     echo "n"                                   # Do you want to be prompted for phases (Y/N)? 
-    echo "ne"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "ab"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "san"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "lc"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "sil8L"			       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qjL"			               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qHL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "q8L"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "crst"			               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "trd"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qL"				       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "q"		                       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "kjdTH"		               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "kjdh"                                #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qTHL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "qWL"	                      	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "anL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish: 
-    echo "prl"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:   
-    echo "h2oL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:       
+    echo "q"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry          
+    echo "kalGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry and avg cont crust
+    echo "h2oL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h           
+    #echo "lc"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h + (and & arch) basalt
+    echo "fo8L"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM & cont-crust
+    echo "foL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM  & PUM & cont-crust
+    #echo "nasGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For PUM
+    echo "k2o"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For cont-crust
     echo ""
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"            # Solution model file
@@ -189,18 +178,8 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "Sp(HP)"  			       # Solution Model Phases
     echo "Gt(HP)"  			       # Solution Model Phases
     echo "Opx(HP)"  			       # Solution Model Phases
-    #echo "Cpx(HP)" 			       # Solution Model Phases
+    echo "Cpx(HP)" 			       # Solution Model Phases
     echo "Pl(h)" 			       # Solution Model Phases
-    echo "Wad" 			               # Solution Model Phases
-    #echo "San(TH)"  			       # Solution Model Phases
-    #echo "C2_c(jca)"  			       # Solution Model Phases    
-    #echo "GlTrTsPg" 			       # Solution Model Phases
-    #echo "B" 	         		       # Solution Model Phases
-    #echo "Chl(HP)" 			       # Solution Model Phases
-    #echo "KN-Phen" 			       # Solution Model Phases
-    #echo "T" 			               # Solution Model Phases
-    #echo "A-phase" 			       # Solution Model Phases
-    #echo "Atg" 			       # Solution Model Phases
     echo ""                                    # End of solution model selection
     echo "${project_name}"                     # Calculation title (same as project name)
 } > "$input_file"
@@ -232,10 +211,27 @@ else
 fi
 
 # Extract the composition data (lines may  vary check the project file)
-comp_data=$(sed -n '29,36p' "${project_name}.dat" | awk '{print $1, $3}')
+#comp_data=$(sed -n '29,36p' "${project_name}.dat" | awk '{print $1, $3}')
 
 # Extract T and P ranges (lines may  vary check the project file)
-t_p_range=$(sed -n '83,84p' "${project_name}.dat" | awk '{print $1, $2}')
+#t_p_range=$(sed -n '68,69p' "${project_name}.dat" | awk '{print $1, $2}')
+#t_p_range=$(sed -n '63,64p' "${project_name}.dat" | awk '{print $1, $2}')
+
+# Find the line number for "begin thermodynamic component list"
+lnb=$(grep -n "begin thermodynamic component list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Find the line number for "end thermodynamic component list"
+lne=$(grep -n "end thermodynamic component list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Extract the composition data dynamically based on lnb and lne
+comp_data=$(sed -n "$((lnb + 1)),$((lne - 1))p" "${project_name}.dat" | awk '{print $1, $3}')
+
+# Find the line number for "end solution phase list"
+ln=$(grep -n "end solution phase list" "${project_name}.dat" | awk -F: '{print $1}')
+
+# Extract T and P ranges using the calculated line numbers
+t_p_range=$(sed -n "$((ln + 2)),$((ln + 3))p" "${project_name}.dat" | awk '{print $1, $2}')
+
 
 # Format composition data (columns 1 and 3)
 comp_elements=$(echo "$comp_data" | awk '{printf "%s\t", $1}')  # Elements separated by tab
@@ -269,7 +265,7 @@ input_file="werami_input.txt"	    # For all the input and their functions check 
     echo "33"               # Property: S-wave velocity P derivative (km/s/bar)
     echo "0"                # End property selection
     echo "n"                # Change default variable range: No
-    echo "4"                # Grid resolution: 313 x 313 nodes
+    echo "4"                # Grid resolution: 
     echo "y"                # Continue with operation
     echo "0"                # End werami
 } > "$input_file"
