@@ -165,12 +165,15 @@ input_file="build_input.txt"  # For all the input and their functions check http
     echo "n"                                   # Do you want to be prompted for phases (Y/N)? 
     echo "q"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry          
     echo "kalGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For dry and avg cont crust
-    echo "h2oL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h           
-    #echo "lc"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h + (and & arch) basalt
-    echo "fo8L"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM & cont-crust
-    echo "foL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM  & PUM & cont-crust
-    #echo "nasGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For PUM
-    echo "k2o"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For cont-crust
+    echo "h2oL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish:    For h           
+    echo "lc"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For h + (and & arch) basalt
+    #echo "faGL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM  and deep
+    #echo "foGL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM and deep
+    #echo "woGL"	                               #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM and deep
+    #echo "fo8L"	                               #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM & PUM    and deep
+    #echo "foL"	                       	       #  Enter names, left justified, 1 per line, press <enter> to finish:    For DMM  & PUM and deep
+    #echo "nasGL"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For PUM 
+    #echo "k2o"	                       #  Enter names, left justified, 1 per line, press <enter> to finish:    For deep 
     echo ""
     echo "y"                                   # Include solution models (Y/N)
     echo "$datafiles_dir/$soln_mod"            # Solution model file
